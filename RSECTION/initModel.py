@@ -7,10 +7,10 @@ from RSECTION.suds_requests import RequestsTransport
 
 # Connect to server
 # Check server port range set in "Program Options & Settings"
-# By default range is set between 8101 ... 8109
+# By default range is set between 8081 ... 8089
 print('Connecting to server...')
 try:
-    client = Client('http://localhost:8101/wsdl')
+    client = Client('http://localhost:8081/wsdl')
 except:
     print('Error: Connection to server failed!')
     print('Please check:')
