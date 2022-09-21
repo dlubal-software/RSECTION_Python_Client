@@ -13,7 +13,12 @@ class Opening():
 
         '''
         Args:
-
+            no (int): Opening Tag
+            boundary_lines (str): Boundary Lines Number
+            part_no (int): Part Number
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Opening
@@ -48,7 +53,8 @@ class Opening():
 
         '''
         Args:
-
+            openings_no (str): Openings Number
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Delete from client model
