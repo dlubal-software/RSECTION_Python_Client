@@ -12,7 +12,11 @@ class Material():
 
         '''
         Args:
-
+            no (int): Material Tag
+            name (str): Material Name
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Material
@@ -43,7 +47,8 @@ class Material():
 
         '''
         Args:
-
+            materials_no (str): Materials Number
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Delete from client model

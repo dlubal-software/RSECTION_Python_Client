@@ -16,7 +16,15 @@ class Part():
 
         '''
         Args:
-
+            no (int): Part Tag
+            boundary_lines (str): Boundary Lines Number
+            material_no (int): Material Number
+            integrated_objects (bool): Enable/Disable Integrated Objects Option
+            integrated_objects_auto (bool): Enable/Disable Integrated Objects Auto Option
+            integrated_openings (str): Inegrated Openings Line Number
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Part
@@ -62,6 +70,8 @@ class Part():
 
         '''
         Args:
+            parts_no (str): Parts Number
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Delete from client model

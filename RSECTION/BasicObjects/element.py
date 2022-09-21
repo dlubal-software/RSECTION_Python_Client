@@ -13,7 +13,12 @@ class Element():
 
         '''
         Args:
-
+            no (int): Element Tag
+            points_no (str): Points Number
+            thickness (float): Element Thickness
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Element
@@ -55,7 +60,13 @@ class Element():
 
         '''
         Args:
-
+            no (int): Element Tag
+            points_no (str): Points Number
+            thickness (float): Element Thickness
+            effective_thickness (list): Effective Thickness List
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Element
@@ -113,7 +124,15 @@ class Element():
 
         '''
         Args:
-
+            no (int): Element Tag
+            points_no (list): Points Number
+            control_point (list): Control Point coordinate for Arc in [Y, Z]
+            alpha_adjustment_target (enum): Element Arc Alpha Adjustment Target Enumeration
+            thickness (float): Element Thickness
+            effective_thickness (list): Effective Thickness List
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Element
@@ -174,7 +193,14 @@ class Element():
 
         '''
         Args:
-
+            no (int): Element Tag
+            center_of_cirle (list): Coordinate of Circle Center
+            circle_radius (float): Circle Radius
+            thickness (float): Element Thickness
+            effective_thickness (list): Effective Thickness List
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Element
@@ -234,8 +260,14 @@ class Element():
 
         '''
         Args:
+            no (int): Element Tag
+            points_no (list): Points Number
             control_point (list): Control Point coordinate for Ellipse in [Y, Z]
-
+            thickness (float): Element Thickness
+            effective_thickness (list): Effective Thickness List
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Element
@@ -296,9 +328,15 @@ class Element():
 
         '''
         Args:
+            no (int): Element Tag
+            points_no (list): Points Number
             control_point (list): Control Point coordinate for Parabola in [Y, Z]
             alpha (float): Alpha Angle (in Radians)
-
+            thickness (float): Element Thickness
+            effective_thickness (list): Effective Thickness List
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Element
@@ -362,6 +400,7 @@ class Element():
 
         '''
         Args:
+            no (int): Element Tag
             control_points (str): String of Start Point and End Point (example: '1 2')
             components (list of lists): Control Points List
                 component = [[start_point_x, start_point_y],
@@ -369,7 +408,12 @@ class Element():
                              ....,
                              [end_point_x, end_point]]
             weights (list): Control Points Weights
-
+            order (int): Nurbs Order
+            thickness (float): Element Thickness
+            effective_thickness (list): Effective Thickness List
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Element
@@ -436,7 +480,8 @@ class Element():
 
         '''
         Args:
-
+            elements_no (str): Elements Number
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Delete from client model

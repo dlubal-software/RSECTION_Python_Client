@@ -12,8 +12,13 @@ class Point():
                  model = Model):
 
         '''
-        Arg:
-
+        Args:
+            no (int): Point Tag
+            coordinate_Y (float): Y-Coordinate
+            coordinate_Z (float): Z-Coordinate
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         #Cleint model | Point
@@ -51,6 +56,13 @@ class Point():
 
         '''
         Args:
+            no (int): Point Tag
+            reference_point (int): Reference Point Number
+            coordinate_system (list): Coordinate System List
+                coordinate_system = [coordinate_Y, coordinate_Z]
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Point
@@ -97,7 +109,7 @@ class Point():
                  start_point_no: int = 1,
                  end_point_no: int = 2,
                  point_reference = PointReferenceType.REFERENCE_TYPE_L,
-                 parameters = [True, 50],
+                 parameters = [True, 0.5],
                  offset: float = 0.0,
                  comment: str = '',
                  params: dict = None,
@@ -105,6 +117,19 @@ class Point():
 
         '''
         Args:
+            no (int): Point Tag
+            start_point_no (int): Start Point Number
+            end_point_no (int): End Point Number
+            point_reference (enum): Point Reference Type Enumeration
+            parameters (list): Point Reference Parameter List
+                for relative reference:
+                    parameters = [True, distance_from_start_relative] ex: [True, 0.5]
+                for absolute reference:
+                    parameters = [False, distance_from_start_absolute]
+            offset (float): Offset Value
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Point
@@ -199,6 +224,21 @@ class Point():
 
         '''
         Args:
+            no (int): Point Tag
+            start_point_y (float): Start Point Coordinate Y
+            start_point_z (float): Start Point Coordinate Z
+            end_point_y (float): End Point Coordinate Y
+            end_point_z (float): End Point Coordinate Y
+            point_reference (enum): Point Reference Type Enumeration
+            parameters (list): Point Reference Parameter List
+                for relative reference:
+                    parameters = [True, distance_from_start_relative] ex: [True, 0.5]
+                for absolute reference:
+                    parameters = [False, distance_from_start_absolute]
+            offset (float): Offset Value
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Point
@@ -291,6 +331,17 @@ class Point():
 
         '''
         Args:
+            no (int): Point Tag
+            line_no (int): Reference Line Number
+            point_reference (enum): Point Reference Type Enumeration
+            parameters (list): Point Reference Parameter List
+                for relative reference:
+                    parameters = [True, distance_from_start_relative] ex: [True, 0.5]
+                for absolute reference:
+                    parameters = [False, distance_from_start_absolute]
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Point
@@ -365,6 +416,8 @@ class Point():
 
         '''
         Args:
+            points_no (str): Points Number
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Delete from client model
