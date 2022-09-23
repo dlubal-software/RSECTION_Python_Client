@@ -13,7 +13,12 @@ class Section():
 
         '''
         Args:
-
+            no (int): Section Tag
+            name (str): Section Name
+            material_no (int): Material Number
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Section
@@ -47,6 +52,8 @@ class Section():
 
         '''
         Args:
+            sections_no (str): Sections Number
+            model (RSECTION Class, optional): Model to be edited
 
         '''
 
