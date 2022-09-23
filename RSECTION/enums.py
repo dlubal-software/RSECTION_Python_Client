@@ -56,4 +56,24 @@ class StressPointType(Enum):
     '''
     Element Type | Enumeration
     '''
-    TYPE_STANDARD, TYPE_ON_LINE = range(2)
+    TYPE_STANDARD, TYPE_ON_LINE, TYPE_ON_ELEMENT = range(3)
+
+class ElementSide(Enum):
+    '''
+    Element Side | Enumeration
+    '''
+    ELEMENT_SIDE_MIDDLE, ELEMENT_SIDE_LEFT, ELEMENT_SIDE_RIGHT = range(3)
+
+class OptimizeOnType(Enum):
+    '''
+    Optimization Settings Optimize On Type | Enumeration
+    '''
+    E_OPTIMIZE_ON_TYPE_MIN_WHOLE_WEIGHT, E_OPTIMIZE_ON_TYPE_MIN_VECTORIAL_DISPLACEMENT, E_OPTIMIZE_ON_TYPE_MIN_MEMBER_DEFORMATION, \
+    E_OPTIMIZE_ON_TYPE_MIN_SURFACE_DEFORMATION, E_OPTIMIZE_ON_TYPE_MIN_COST, E_OPTIMIZE_ON_TYPE_MIN_CO2_EMISSIONS = range(6)
+
+class Optimizer(Enum):
+    '''
+    Optimization Settings Optimizer | Enumeration
+    '''
+    E_OPTIMIZER_TYPE_ALL_MUTATIONS, E_OPTIMIZER_TYPE_PERCENTS_OF_RANDOM_MUTATIONS, E_OPTIMIZER_TYPE_PARTICLE_SWARM = range(3)
+
