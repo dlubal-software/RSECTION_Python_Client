@@ -76,6 +76,7 @@ def test_point():
     assert Point_3.distance_from_start_relative == 0.5
     assert Point_4.reference_type == "REFERENCE_TYPE_L"
     assert Point_5.on_line_reference_line == 1
+    assert Point_5.reference_type == "REFERENCE_TYPE_Y"
 
 def test_line():
 
