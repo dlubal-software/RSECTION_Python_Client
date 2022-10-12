@@ -19,7 +19,7 @@ from RSECTION.LoadCasesAndCombinations.loadcase import LoadCase
 if Model.clientModel is None:
     Model()
 
-def test_stresspoint():
+def test_loadcase():
 
     Model.clientModel.service.delete_all()
     Model.clientModel.service.begin_modification()
