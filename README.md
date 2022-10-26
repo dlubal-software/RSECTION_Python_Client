@@ -22,7 +22,8 @@ Dlubal Software GmbH
 
 Welcome to RSECTION Python High Level Functions
 
-<a href="https://www.dlubal.com/en/products/cross-section-properties-software/rsection" title="API"><img src="./img/2Dtruss.gif" width=550 alt="Tutorial" /></a>
+[comment]: <> (<a href="https://www.dlubal.com/en/products/cross-section-properties-software/rsection" title="API"><img src="./img/2Dtruss.gif" width=550 alt="Tutorial" /></a>)
+
 </h2>
 
 Python client (high-level functions) for [RSECTION](https://www.dlubal.com/en/products/cross-section-properties-software/rsection) using [Web Services](https://en.wikipedia.org/wiki/Web_service) (WS), [SOAP](https://cs.wikipedia.org/wiki/SOAP) and [WSDL](https://en.wikipedia.org/wiki/Web_Services_Description_Language). Available Python SOAP pkgs can be found on [wiki.python.org](https://wiki.python.org/moin/WebServices#SOAP).
@@ -48,7 +49,7 @@ Dependency check is implemented inside [dependencies.py](RSECTION/dependencies.p
 * <img align="left" alt="RSECTION" width="26px" src="https://raw.githubusercontent.com/Dlubal-Software/RFEM_Python_Client/main/img/RFEM.png" style="padding-right:1px;">RSECTION 1 application. Client is always compatible with the latest version.
 
 ### Step by step
-1) 🌀 [Clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#:~:text=Cloning%20an%20Existing%20Repository) this repository (if you have GitHub account) or download actual [release](https://github.com/Dlubal-Software/RFEM_Python_Client/releases)
+1) 🌀 [Clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#:~:text=Cloning%20an%20Existing%20Repository) this repository (if you have GitHub account) or download actual [release](https://github.com/Dlubal-Software/RSECTION_Python_Client/releases)
 2) <img align="left" alt="RSECTION" width="18px" src="https://raw.githubusercontent.com/Dlubal-Software/RFEM_Python_Client/main/img/RFEM.png"> Open RSECTION 1 application
 
 3) ☑️ Check if there are no opened dialogues in RSECTION and server port range under *Options-Web Services* corresponds to the one set in initModel
@@ -61,7 +62,7 @@ The [scripts](https://github.com/Dlubal-Software/RSECTION_Python_Client/tree/mai
 Collection of [scripts](https://github.com/Dlubal-Software/RSECTION_Python_Client/tree/main/UnitTests) used to support further development.
 
 ## Python package 📦
-The easiest way to enjoy the Client is to install current [RSECTION package](https://pypi.org/project/RFEM/) directly to your Python via `pip install RSECTION`. Especially if no code changes are required.
+The easiest way to enjoy the Client is to install current [RSECTION package](https://pypi.org/project/RSECTION/) directly to your Python via `pip install RSECTION`. Especially if no code changes are required.
 
 ## Documentation 📚
 For complete description of classes and functions visit our [![image](https://img.shields.io/badge/GitHub-page-darkblue?logo=github&amp;)](https://dlubal-software.github.io/.github/guide/ready.html).
@@ -116,7 +117,7 @@ Contributions are always welcome!🙂 Please ensure your pull request adheres to
 
 ## GitHub Stargazers over time
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Dlubal-Software/RFEM_Python_Client&type=Date)](https://star-history.com/#Dlubal-Software/RFEM_Python_Client&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Dlubal-Software/RSECTION_Python_Client&type=Date)](https://star-history.com/#Dlubal-Software/RSECTION_Python_Client&Date)
 
 
 ## Contributors
