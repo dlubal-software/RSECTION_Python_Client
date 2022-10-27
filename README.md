@@ -44,7 +44,7 @@ This Python project is focused on opening RSECTION 1 to all of our customers, en
 
 ### Dependencies
 Dependency check is implemented inside [dependencies.py](RSECTION/dependencies.py) with option to install during execution.
-* <img align="left" alt="PyPi" width="26px" src="https://raw.githubusercontent.com/Dlubal-Software/RFEM_Python_Client/main/img/PyPI.png" style="padding-right:1px;">PyPi pkgs: [SUDS](https://github.com/cackharot/suds-py3), [requests](https://docs.python-requests.org/en/master/), [six](https://pypi.org/project/six/), [mock](https://pypi.org/project/mock/), and [xmltodict](https://pypi.org/project/xmltodict/).
+* <img align="left" alt="PyPi" width="26px" src="https://raw.githubusercontent.com/Dlubal-Software/RFEM_Python_Client/main/img/PyPI.png" style="padding-right:1px;">PyPi pkgs: [SUDS](https://github.com/cackharot/suds-py3), [requests](https://pypi.org/project/requests/), [six](https://pypi.org/project/six/), [mock](https://pypi.org/project/mock/), and [xmltodict](https://pypi.org/project/xmltodict/).
 
 * <img align="left" alt="RSECTION" width="26px" src="https://raw.githubusercontent.com/Dlubal-Software/RFEM_Python_Client/main/img/RFEM.png" style="padding-right:1px;">RSECTION 1 application. Client is always compatible with the latest version.
 
