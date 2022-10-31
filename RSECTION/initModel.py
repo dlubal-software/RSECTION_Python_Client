@@ -2,7 +2,6 @@ import sys
 import RSECTION.dependencies
 import requests
 from suds.client import Client
-from RSECTION.enums import *
 from RSECTION.suds_requests import RequestsTransport
 
 # Connect to server

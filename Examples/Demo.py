@@ -11,7 +11,6 @@ sys.path.append(dirName + r'/..')
 
 from RSECTION.initModel import Calculate_all, Model
 from RSECTION.BasicObjects.material import Material
-from RSECTION.BasicObjects.section import Section
 from RSECTION.BasicObjects.point import Point
 from RSECTION.BasicObjects.line import Line
 from RSECTION.BasicObjects.part import Part

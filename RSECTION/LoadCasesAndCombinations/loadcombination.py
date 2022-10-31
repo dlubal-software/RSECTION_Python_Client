@@ -1,5 +1,4 @@
 from RSECTION.initModel import Model, clearAtributes
-from RSECTION.enums import *
 
 class LoadCombination():
 
