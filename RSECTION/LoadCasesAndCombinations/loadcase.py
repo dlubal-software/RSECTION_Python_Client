@@ -14,7 +14,13 @@ class LoadCase():
 
         '''
         Args:
-
+            no (int): Load Case Tag
+            action_category (enum): Action Category Type Enumeration
+            to_solve (bool): Enable/Disable To Solve Option
+            name (str): User Define Name
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         #Cleint model | Load Case
