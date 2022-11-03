@@ -13,7 +13,7 @@ class LoadCombination():
 
         '''
         Args:
-            no (int): Load Case Tag
+            no (int): Load Combination Tag
             load_combination_item (enum): Load Combination Item List
             user_defined_name (list): User Define Name
             to_solve (bool): Enable/Disable To Solve Option
