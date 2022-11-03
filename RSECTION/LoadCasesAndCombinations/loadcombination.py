@@ -14,7 +14,7 @@ class LoadCombination():
         '''
         Args:
             no (int): Load Combination Tag
-            load_combination_item (enum): Load Combination Item List
+            load_combination_item (list of lists): Load Combination Item Table
             user_defined_name (list): User Define Name
             to_solve (bool): Enable/Disable To Solve Option
             comment (str, optional): Comments
