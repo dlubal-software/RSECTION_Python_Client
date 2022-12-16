@@ -289,8 +289,8 @@ class Line():
     def NURBS(
               no: int = 1,
               control_points: str = None,
-              order: int = None,
               components: list = None,
+              order: int = None,
               weights: list = None,
               comment: str = '',
               params: dict = None,
@@ -306,7 +306,7 @@ class Line():
                              ....,
                              [end_point_x, end_point]]
             order (int): Nurbs Order
-            weights (list): Control Points Weights
+            weights (list, optional): Control Points Weights
             comment (str, optional): Comments
             params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
             model (RSECTION Class, optional): Model to be edited

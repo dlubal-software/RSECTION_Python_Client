@@ -100,7 +100,8 @@ def test_line():
     Line.Circle(4, [-0.1, 0.0], 0.1)
     Line.Ellipse(5, [7 ,8], [-0.15,0.16])
     Line.Parabola(6, [1, 8], [-0.15,0.35], 0.1)
-    Line.NURBS(7,'10 11', [[0,-0.2], [0.2,-0.3],[0.4,-0.1],[0.6,-0.2]],[1,1,1,1],3)
+    Line.NURBS(7,'10 11', [[0,-0.2], [0.2,-0.3],[0.4,-0.1],[0.6,-0.2]], 3, [1,1,1,1])
+    Line.NURBS(8,'10 11', [[0,-0.2], [0.2,-0.1],[0.4,-0.3],[0.6,-0.2]], 3)
 
     Model.clientModel.service.finish_modification()
 
@@ -111,6 +112,7 @@ def test_line():
     line_5 = Model.clientModel.service.get_line(5)
     line_6 = Model.clientModel.service.get_line(6)
     line_7 = Model.clientModel.service.get_line(7)
+    line_8 = Model.clientModel.service.get_line(8)
 
     assert line_1.no == 1
     assert line_2.length == 0.2
@@ -119,6 +121,7 @@ def test_line():
     assert line_5.ellipse_second_point == 8
     assert line_6.parabola_alpha == 0.1
     assert line_7.nurbs_control_points_by_components[0][1].row['weight'] == 1.0
+    assert line_8.nurbs_order == 3
 
 def test_part():
 
