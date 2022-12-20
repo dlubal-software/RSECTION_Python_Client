@@ -290,8 +290,8 @@ class Line():
               no: int = 1,
               control_points: str = None,
               components: list = None,
-              weights: list = None,
               order: int = None,
+              weights: list = None,
               comment: str = '',
               params: dict = None,
               model = Model):
@@ -305,8 +305,8 @@ class Line():
                              [control_point_x, control_point_y],
                              ....,
                              [end_point_x, end_point]]
-            weights (list): Control Points Weights
             order (int): Nurbs Order
+            weights (list, optional): Control Points Weights
             comment (str, optional): Comments
             params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
             model (RSECTION Class, optional): Model to be edited
@@ -341,7 +341,10 @@ class Line():
             nurbs.no = i+1
             nurbs.row.global_coordinate_y = components[i][0]
             nurbs.row.global_coordinate_z = components[i][1]
-            nurbs.row.weight = weights[i]
+            if weights == None:
+                nurbs.row.weight = 1
+            else:
+                nurbs.row.weight = weights[i]
 
             clientObject.nurbs_control_points_by_components.line_nurbs_control_points_by_components.append(nurbs)
 
