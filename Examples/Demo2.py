@@ -66,10 +66,12 @@ if __name__ == '__main__':
     Element.NURBS(2, '14 15', [[-0.175,-0.175],[-0.12,-0.37],[0,-0.53],[0.12,-0.37],[0.175,-0.175]], [1,1,1,1,1], 3, 0.055)
     Element.NURBS(3, '15 16', [[0.175,-0.175],[0.37,-0.12],[0.53,0],[0.37,0.12],[0.175,0.175]], [1,1,1,1,1], 3, 0.055)
     Element.NURBS(4, '16 13', [[0.175,0.175],[0.12,0.37],[0,0.53],[-0.12,0.37],[-0.175,0.175]], [1,1,1,1,1], 3, 0.055)
-    Element.Circle(5, [0,0], 0.1813, 0.0626, circle_point=[-0.1282,-0.1282])
+    Element.Arc(5, [17, 18], [-0.1813,0], thickness=0.0626)
+    Element.Arc(6, [18, 19], [0,-0.1813], thickness=0.0626)
+    Element.Arc(7, [19, 20], [0.1813,0], thickness=0.0626)
+    Element.Arc(8, [20, 17], [0,0.1813], thickness=0.0626)
+    Element.SingleLine(6, '13 17', 0, [True, 0.03])
     
     Model.clientModel.service.finish_modification()
 
-    #Calculate_all
-
-
+    Calculate_all()
