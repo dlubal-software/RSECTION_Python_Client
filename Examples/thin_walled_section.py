@@ -15,11 +15,10 @@ from RSECTION.BasicObjects.point import Point
 from RSECTION.BasicObjects.line import Line
 from RSECTION.BasicObjects.part import Part
 from RSECTION.BasicObjects.element import Element
-from RSECTION.enums import ElementArcAlphaAdjustmentTarget
 
 if __name__ == '__main__':
 
-    Model(True, "Steelracksystem.rsc") # crete new model called Steelracksystem
+    Model(True, "thin_walled_section.rsc") # crete new model called Steelracksystem
 
     Model.clientModel.service.begin_modification()
 
