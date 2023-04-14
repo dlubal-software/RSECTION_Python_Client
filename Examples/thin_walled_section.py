@@ -19,7 +19,7 @@ from RSECTION.enums import PointReferenceType
 
 if __name__ == '__main__':
 
-    # h = float(input('Height of Section in m: '))
+    h = float(input('Height of Section in m: '))
     b = float(input('Width of Section in m: '))
     # t_input = float(input('Thickness of Section in m: '))
 
@@ -57,47 +57,37 @@ if __name__ == '__main__':
     t = 0.003/2
     n = [1, 1, -1, -1]
     for i in range(4):
-        Point(i+36, m[i]*((b/2-b/2*(67/140)) + 0.0065), (0.094+t*n[i]))
-        Point(i+40, m[i]*((b/2-b/2*(67/140)) + 0.001), 0.094+t*n[i])
-        Point(i+44, m[i]*((b/2-b/2*(67/140))-0.003-0.0015+t*n[i]), 0.0885)
-        Point(i+48, m[i]*((b/2-b/2*(67/140))-0.003-0.0015+t*n[i]), 0.0665)
-        Point(i+52, m[i]*(b/2-b/2*(67/140)), 0.062+t*n[i])
-        Point(i+56, m[i]*(b/2-0.006), 0.062+t*n[i])
-        Point(i+60, m[i]*((b/2-0.0015)+t*n[i]),0.0575)
+        Point(i+36, m[i]*((b/2-b/2*(67/140)) + 0.0065), (h-t)+t*n[i])
+        Point(i+40, m[i]*((b/2-b/2*(67/140)) + 0.001), (h-t)+t*n[i])
+        Point(i+44, m[i]*((b/2-b/2*(67/140))-0.003-0.0015+t*n[i]), h-0.004-t*2)
+        Point(i+48, m[i]*((b/2-b/2*(67/140))-0.003-0.0015+t*n[i]), h*65/100+0.003+t)
+        Point(i+52, m[i]*(b/2-b/2*(67/140)), h*65/100+t*n[i])
+        Point(i+56, m[i]*(b/2-0.006), h*65/100+t*n[i])
+        Point(i+60, m[i]*((b/2-0.0015)+t*n[i]), h*65/100-0.003-t)
         Point(i+64, m[i]*((b/2-0.0015)+t*n[i]), 0.0295)
-        Point(68, m[i]*-0.0659, 0.0277)
-        Point(69, m[i]*0.0659, 0.0277)
-        Point(72, m[i]*-0.0671, 0.0249)
-        Point(73, m[i]*0.0671, 0.0249)
+
         Point(i+74, m[i]*((b/2-0.0055)+t*n[i]), 0.0232)
         Point(i+78, m[i]*((b/2-0.0055)+t*n[i]), 0.0138)
-        Point(82, m[i]*-0.0671, 0.0121)
-        Point(83, m[i]*0.0671, 0.0121)
-        Point(86, m[i]*-(0.0659), 0.0093)
-        Point(87, m[i]*0.0659, 0.0093)
+
         Point(i+90, m[i]*((b/2-0.0015)+t*n[i]), 0.0075)
         Point(i+94, m[i]*((b/2-0.0015)+t*n[i]), 0.0025)
         Point(i+98, m[i]*(b/2-0.007), -(0.003+t*n[i]))
         Point(i+102, m[i]*0.0061, -(0.003+t*n[i]))
-        Point(106, m[i]*-0.0024, -0.0027)
-        Point(107, m[i]*0.0024, -0.0027)
-        Point(110, m[i]*-0.0048, -0.0007)
-        Point(111, m[i]*0.0048, -0.0007)
 
-    #for i in range(2):
-    Point(114, -(b/2 - 0.005), 0.0075)
-    Point(115, -(b/2-0.002), 0.0138)
-    Point.BetweenTwoLocations(116, -(b/2 - 0.005), 0.0075, -(b/2-0.002), 0.0138, PointReferenceType.REFERENCE_TYPE_L, [True, 5/7])
-    Point.BetweenTwoLocations(117, -(b/2 - 0.005), 0.0075, -(b/2-0.002), 0.0138, PointReferenceType.REFERENCE_TYPE_L, [True, 2/7])
-
-
+    for i in range(2):
+        Point.BetweenTwoLocations(82+i, m[i]*(b/2 - 0.005), 0.0075, m[i]*(b/2-0.002), 0.0138, PointReferenceType.REFERENCE_TYPE_L, [True, 5/7])
+        Point.BetweenTwoLocations(86+i, m[i]*(b/2 - 0.005), 0.0075, m[i]*(b/2-0.002), 0.0138, PointReferenceType.REFERENCE_TYPE_L, [True, 2/7])
+        Point.BetweenTwoLocations(68+i, m[i]*(b/2 - 0.005), 0.0295, m[i]*(b/2-0.002), 0.0232, PointReferenceType.REFERENCE_TYPE_L, [True, 2/7])
+        Point.BetweenTwoLocations(72+i, m[i]*(b/2 - 0.005), 0.0295, m[i]*(b/2-0.002), 0.0232, PointReferenceType.REFERENCE_TYPE_L, [True, 5/7])
+        Point.BetweenTwoLocations(106+i, m[i]*0.0061, 0.0002, 0, -0.0045, PointReferenceType.REFERENCE_TYPE_L, [True, 4.7/7.7])
+        Point.BetweenTwoLocations(110+i, m[i]*0.0061, 0.0002, 0, -0.0045, PointReferenceType.REFERENCE_TYPE_L, [True, 1.7/7.7])
+        
     Point(112, 0, 0+t)
     Point(113, 0, 0-t)
 
-    
-
     Line(67, '36 38')
     Line(68, '37 39')
+
     # Creating Lines     
     for i in range(4):
         Line(i+1, str(i+36)+' '+ str(i+40))
@@ -108,20 +98,19 @@ if __name__ == '__main__':
         Line(i+21, str(i+90)+' '+ str(i+94))
         Line(i+25, str(i+98)+' '+ str(i+102))
 
-    # s = 0.001
-    # for i in range(2):
-    #     Line.Arc(29+i, [40+i, 46+i], [m[i]*(0.0336-s), 0.0924+s])
-    #     Line.Arc(31+i, [50+i, 54+i], [m[i]*(0.0333-s), 0.0633-s])
-    #     Line.Arc(33+i, [56+i, 60+i], [m[i]*(0.0672+s), 0.0607+s])
-    #     Line.Arc(35+i, [66+i, 68+i], [m[i]*0.0667, 0.0284])
-    #     Line.Arc(37+i, [68+i, 76+i], [m[i]*0.0638, 0.0258])
-    #     Line.Arc(39+i, [80+i, 86+i], [m[i]*0.0638, 0.0112])
-    #     Line.Arc(41+i, [86+i, 92+i], [m[i]*0.0667, 0.0086])
-    #     Line.Arc(43+i, [94+i, 98+i], [m[i]*(0.0669+s), -(0.0014+s)])
-    #     Line.Arc(45+i, [104+i, 110+i], [m[i]*0.0054, -0.0013])
+    for i in range(2):
+        Line.Arc(29+i, [40+i, 46+i], [m[i]*(((b/2-b/2*(67/140)) + 0.001)-0.0049497), h-0.0020503])
+        # Line.Arc(31+i, [50+i, 54+i], [m[i]*(0.0333-s), 0.0633-s])
+        # Line.Arc(33+i, [56+i, 60+i], [m[i]*(0.0672+s), 0.0607+s])
+        # Line.Arc(35+i, [66+i, 68+i], [m[i]*0.0667, 0.0284])
+        # Line.Arc(37+i, [68+i, 76+i], [m[i]*0.0638, 0.0258])
+        ########>Line.Arc(39+i, [80+i, 86+i], [m[i]*0.0638, 0.0112])
+        Line.Arc(41+i, [86+i, 92+i], [m[i]*(((b/2-0.0015)+t*n[i])-0.0003093), 0.0085711])
+        Line.Arc(43+i, [94+i, 98+i], [m[i]*((b/2-0.007)+0.0049497), -0.0024497])
+        Line.Arc(45+i, [104+i, 110+i], [m[i]*0.0054, -0.0013])
     
     # k = 0.0011
-    # for i in range(2):
+    for i in range(2):
     #     Line.Arc(47+i, [42+i, 44+i], [m[i]*(0.0336+k), 0.0924-k])
     #     Line.Arc(49+i, [48+i, 52+i], [m[i]*(0.0333+k), 0.0633+k])
     #     Line.Arc(51+i, [58+i, 62+i], [m[i]*(0.0672-k), 0.0607-k])
@@ -130,7 +119,7 @@ if __name__ == '__main__':
     #     Line.Arc(57+i, [78+i, 82+i], [m[i]*0.0663, 0.0128])
     #     Line.Arc(59+i, [82+i, 90+i], [m[i]*0.0692, 0.0102])
     #     Line.Arc(61+i, [96+i, 100+i], [m[i]*(0.0669-k), -(0.0014-k)])
-    #     Line.Arc(63+i, [102+i, 106+i], [m[i]*0.004, -0.004])
+        Line.Arc(63+i, [102+i, 106+i], [m[i]*0.004, -0.004])
 
     Line.Arc(65, [110, 111], [0, 0.0015])
     Line.Arc(66, [106, 107], [0, -0.0015])
