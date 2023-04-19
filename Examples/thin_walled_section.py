@@ -21,9 +21,16 @@ if __name__ == '__main__':
 
     h = float(input('Height of Section in m: '))
     b = float(input('Width of Section in m: '))
-    # t_input = float(input('Thickness of Section in m: '))
+    
+    filename = str(input('Section modelname: '))
+    if '.src' not in filename:
+        filename = filename + '.src'
+    
+    save = str(input('Do you want to save the file? [y/n]: '))
+    if save.lower() == 'y':
+        filepath = str(input('Filepath: '))
 
-    Model(True, "thin_walled_section.rsc") # crete new model called Steelracksystem
+    Model(True, filename) # create new model called Steelracksystem
 
     Model.clientModel.service.begin_modification()
 
@@ -57,13 +64,13 @@ if __name__ == '__main__':
     t = 0.003/2
     n = [1, 1, -1, -1]
     for i in range(4):
-        Point(i+36, m[i]*((b/2-b/2*(67/140)) + 0.0065), (h-t)+t*n[i])
-        Point(i+40, m[i]*((b/2-b/2*(67/140)) + 0.001), (h-t)+t*n[i])
-        Point(i+44, m[i]*((b/2-b/2*(67/140))-0.003-0.0015+t*n[i]), h-0.004-t*2)
-        Point(i+48, m[i]*((b/2-b/2*(67/140))-0.003-0.0015+t*n[i]), h*65/100+0.003+t)
-        Point(i+52, m[i]*(b/2-b/2*(67/140)), h*65/100+t*n[i])
-        Point(i+56, m[i]*(b/2-0.006), h*65/100+t*n[i])
-        Point(i+60, m[i]*((b/2-0.0015)+t*n[i]), h*65/100-0.003-t)
+        Point(i+36, m[i]*((b/2-t)-(b/2-t)*(73/137) + 0.011), (h-0.0045-t)+t*n[i])
+        Point(i+40, m[i]*((b/2-t)-(b/2-t)*(73/137) + 0.0055), (h-0.0045-t)+t*n[i])
+        Point(i+44, m[i]*((b/2-t)-(b/2-t)*(73/137)+t*n[i]), h-0.0045-0.007)
+        Point(i+48, m[i]*((b/2-t)-(b/2-t)*(73/137)+t*n[i]), ((h-2*t)*66.5/97)-0.0045+0.003+t)
+        Point(i+52, m[i]*((b/2-t)-(b/2-t)*(73/137)+0.0045), ((h-2*t)*66.5/97)-0.0045+t*n[i])
+        Point(i+56, m[i]*(b/2-0.006), ((h-2*t)*66.5/97)-0.0045+t*n[i])
+        Point(i+60, m[i]*((b/2-0.0015)+t*n[i]), ((h-2*t)*66.5/97)-0.0045-0.003-t)
         Point(i+64, m[i]*((b/2-0.0015)+t*n[i]), 0.0295)
 
         Point(i+74, m[i]*((b/2-0.0055)+t*n[i]), 0.0232)
@@ -99,26 +106,26 @@ if __name__ == '__main__':
         Line(i+25, str(i+98)+' '+ str(i+102))
 
     for i in range(2):
-        Line.Arc(29+i, [40+i, 46+i], [m[i]*(((b/2-b/2*(67/140)) + 0.001)-0.0049497), h-0.0020503])
-        # Line.Arc(31+i, [50+i, 54+i], [m[i]*(0.0333-s), 0.0633-s])
-        # Line.Arc(33+i, [56+i, 60+i], [m[i]*(0.0672+s), 0.0607+s])
-        # Line.Arc(35+i, [66+i, 68+i], [m[i]*0.0667, 0.0284])
-        # Line.Arc(37+i, [68+i, 76+i], [m[i]*0.0638, 0.0258])
-        ########>Line.Arc(39+i, [80+i, 86+i], [m[i]*0.0638, 0.0112])
-        Line.Arc(41+i, [86+i, 92+i], [m[i]*(((b/2-0.0015)+t*n[i])-0.0003093), 0.0085711])
-        Line.Arc(43+i, [94+i, 98+i], [m[i]*((b/2-0.007)+0.0049497), -0.0024497])
+        Line.Arc(29+i, [40+i, 46+i], [m[i]*(((b/2-t)-(b/2-t)*(73/137)) + 0.0005503), h-0.0065503])
+        Line.Arc(31+i, [50+i, 54+i], [m[i]*(((b/2-t)-(b/2-t)*(73/137)) + 0.0002574), ((h-t*2)*66.5/97)-0.0045+0.0002574])
+        Line.Arc(33+i, [58+i, 62+i], [m[i]*(b/2-0.0038787), ((h-t*2)*66.5/97)-0.0045-t-0.0008787])
+        Line.Arc(35+i, [66+i, 68+i], [m[i]*(b/2-0.0033093), 0.0284289])
+        Line.Arc(37+i, [68+i, 76+i], [m[i]*(b/2-0.0062249), 0.0258467])
+        Line.Arc(39+i, [80+i, 86+i], [m[i]*(b/2-0.0062249), 0.0111533])
+        Line.Arc(41+i, [86+i, 92+i], [m[i]*(b/2-0.0033093), 0.0085711])
+        Line.Arc(43+i, [96+i, 100+i], [m[i]*(b/2-0.0041716), -0.00032840])
         Line.Arc(45+i, [104+i, 110+i], [m[i]*0.0054, -0.0013])
     
     # k = 0.0011
     for i in range(2):
-    #     Line.Arc(47+i, [42+i, 44+i], [m[i]*(0.0336+k), 0.0924-k])
-    #     Line.Arc(49+i, [48+i, 52+i], [m[i]*(0.0333+k), 0.0633+k])
-    #     Line.Arc(51+i, [58+i, 62+i], [m[i]*(0.0672-k), 0.0607-k])
-    #     Line.Arc(53+i, [64+i, 72+i], [m[i]*0.0692, 0.0268])
-    #     Line.Arc(55+i, [72+i, 74+i], [m[i]*0.0663, 0.0243])
-    #     Line.Arc(57+i, [78+i, 82+i], [m[i]*0.0663, 0.0128])
-    #     Line.Arc(59+i, [82+i, 90+i], [m[i]*0.0692, 0.0102])
-    #     Line.Arc(61+i, [96+i, 100+i], [m[i]*(0.0669-k), -(0.0014-k)])
+        Line.Arc(47+i, [42+i, 44+i], [m[i]*((b/2-t)-(b/2-t)*(73/137) + 0.0026716), h-0.0086716])
+        Line.Arc(49+i, [48+i, 52+i], [m[i]*((b/2-t)-(b/2-t)*(73/137) + 0.0023787), (h-t*2)*66.5/97-0.0045+0.0023787])
+        Line.Arc(51+i, [56+i, 60+i], [m[i]*(b/2-0.0017574), ((h-t*2)*66.5/97)-0.0045-0.0002574])
+        Line.Arc(53+i, [64+i, 72+i], [m[i]*(b/2-0.0007732), 0.0268263])
+        Line.Arc(55+i, [72+i, 74+i], [m[i]*(b/2-0.00369), 0.0242423])
+        Line.Arc(57+i, [78+i, 82+i], [m[i]*(b/2-0.00369), 0.0127577])
+        Line.Arc(59+i, [82+i, 90+i], [m[i]*(b/2-0.0007732), 0.0101737])  
+        Line.Arc(61+i, [94+i, 98+i], [m[i]*((b/2-0.007)+0.0049497), -0.0024497])
         Line.Arc(63+i, [102+i, 106+i], [m[i]*0.004, -0.004])
 
     Line.Arc(65, [110, 111], [0, 0.0015])
@@ -289,3 +296,8 @@ if __name__ == '__main__':
     Model.clientModel.service.finish_modification()
 
     Calculate_all()
+    
+    if save.lower() == 'y':
+        model_path = os.path.join(filepath, filename)
+        Model.clientModel.service.save(model_path)
+
