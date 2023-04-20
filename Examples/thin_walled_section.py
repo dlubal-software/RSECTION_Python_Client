@@ -19,28 +19,33 @@ from RSECTION.enums import PointReferenceType
 
 if __name__ == '__main__':
 
+    # User Defined Section Width and Hight
     h = float(input('Height of Section in m: '))
     b = float(input('Width of Section in m: '))
     
+    # User Defined Modelname
     filename = str(input('Section modelname: '))
     if '.rsc' not in filename:
         filename = filename + '.rsc'
     
+    # User Defined Filepath
     save = str(input('Do you want to save the file? [y/n]: '))
     if save.lower() == 'y':
         filepath = str(input('Filepath: '))
 
-    Model(True, filename) # create new model called Steelracksystem
+    # Create New Model
+    Model(True, filename) 
     Model.clientModel.service.delete_all()
     Model.clientModel.service.begin_modification()
 
+    # Creating Material
     Material(1, 'S235')
 
+    # Creating Points
+    n = [1, 1, -1, -1]
     m = [-1, 1, -1, 1]
 
-    # Creating Points
-    t = 0.003/2
-    n = [1, 1, -1, -1]
+    t = 0.003/2 # thickness of section is 3.0 mm
     for i in range(4):
         Point(i+36, m[i]*((b/2-t)-(b/2-t)*(73/137) + 0.011), (h-0.0045-t)+t*n[i])
         Point(i+40, m[i]*((b/2-t)-(b/2-t)*(73/137) + 0.0055), (h-0.0045-t)+t*n[i])
@@ -50,15 +55,14 @@ if __name__ == '__main__':
         Point(i+56, m[i]*(b/2-0.006), ((h-2*t)*66.5/97)-0.0045+t*n[i])
         Point(i+60, m[i]*((b/2-0.0015)+t*n[i]), ((h-2*t)*66.5/97)-0.0045-0.003-t)
         Point(i+64, m[i]*((b/2-0.0015)+t*n[i]), 0.0295)
-
         Point(i+74, m[i]*((b/2-0.0055)+t*n[i]), 0.0232)
         Point(i+78, m[i]*((b/2-0.0055)+t*n[i]), 0.0138)
-
         Point(i+90, m[i]*((b/2-0.0015)+t*n[i]), 0.0075)
         Point(i+94, m[i]*((b/2-0.0015)+t*n[i]), 0.0025)
         Point(i+98, m[i]*(b/2-0.007), -(0.003+t*n[i]))
         Point(i+102, m[i]*0.0061, -(0.003+t*n[i]))
 
+    # Creating Points between to locations to determine intersection
     for i in range(2):
         Point.BetweenTwoLocations(82+i, m[i]*(b/2 - 0.005), 0.0075, m[i]*(b/2-0.002), 0.0138, PointReferenceType.REFERENCE_TYPE_L, [True, 5/7])
         Point.BetweenTwoLocations(86+i, m[i]*(b/2 - 0.005), 0.0075, m[i]*(b/2-0.002), 0.0138, PointReferenceType.REFERENCE_TYPE_L, [True, 2/7])
@@ -70,10 +74,10 @@ if __name__ == '__main__':
     Point(112, 0, 0+t)
     Point(113, 0, 0-t)
 
+    # Creating Straight Lines   
     Line(67, '36 38')
     Line(68, '37 39')
-
-    # Creating Lines     
+ 
     for i in range(4):
         Line(i+1, str(i+36)+' '+ str(i+40))
         Line(i+5, str(i+44)+' '+ str(i+48))
@@ -83,6 +87,7 @@ if __name__ == '__main__':
         Line(i+21, str(i+90)+' '+ str(i+94))
         Line(i+25, str(i+98)+' '+ str(i+102))
 
+    # Creating Lines As Curves
     for i in range(2):
         Line.Arc(29+i, [40+i, 46+i], [m[i]*(((b/2-t)-(b/2-t)*(73/137)) + 0.0005503), h-0.0065503])
         Line.Arc(31+i, [50+i, 54+i], [m[i]*(((b/2-t)-(b/2-t)*(73/137)) + 0.0002574), ((h-t*2)*66.5/97)-0.0045+0.0002574])
@@ -115,6 +120,7 @@ if __name__ == '__main__':
 
     Calculate_all()
     
+    # Saving Model
     if save.lower() == 'y':
         model_path = os.path.join(filepath, filename)
         Model.clientModel.service.save(model_path)
