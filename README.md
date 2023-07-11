@@ -61,9 +61,6 @@ The [scripts](https://github.com/Dlubal-Software/RSECTION_Python_Client/tree/mai
 ### Unit Tests
 Collection of [scripts](https://github.com/Dlubal-Software/RSECTION_Python_Client/tree/main/UnitTests) used to support further development.
 
-## Python package 📦
-The easiest way to enjoy the Client is to install current [RSECTION package](https://pypi.org/project/RSECTION/) directly to your Python via `pip install RSECTION`. Especially if no code changes are required.
-
 ## Documentation 📚
 For complete description of classes and functions visit our [![image](https://img.shields.io/badge/GitHub-page-darkblue?logo=github&amp;)](https://dlubal-software.github.io/.github/guide/ready.html).
 
