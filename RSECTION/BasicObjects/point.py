@@ -362,44 +362,16 @@ class Point():
         # Point Reference and Distance between Point and Start Point with Offset
         clientObject.reference_type = point_reference.name
 
-        if clientObject.reference_type == "REFERENCE_TYPE_L":
+        if parameters[0]:  #if parameters[0]==True
 
-            if parameters[0]:  #if parameters[0]==True
-
-                if parameters[1] <= 0 or parameters[1] >= 1:
-                    raise Exception ('Warning: Please enter correct percentage value between 0.0 and 1.0')
-
-                else:
-                    clientObject.distance_from_start_relative = parameters[1]
+            if parameters[1] <= 0 or parameters[1] >= 1:
+                raise Exception ('Warning: Please enter correct percentage value between 0.0 and 1.0')
 
             else:
-                clientObject.distance_from_start_absolute = parameters[1]
+                clientObject.distance_from_start_relative = parameters[1]
 
-        elif clientObject.reference_type == "REFERENCE_TYPE_Y":
-
-            if parameters[0]:  #if parameters[0]==True
-
-                if parameters[1] <= 0 or parameters[1] >= 1:
-                    raise Exception ('Warning: Please enter correct percentage value as factor between 0.0 and 1.0')
-
-                else:
-                    clientObject.distance_from_start_relative = parameters[1]
-
-            else:
-                clientObject.distance_from_start_absolute = parameters[1]
-
-        elif clientObject.reference_type == "REFERENCE_TYPE_Z":
-
-            if parameters[0]:  #if parameters[0]==True
-
-                if parameters[1] <= 0 or parameters[1] >= 1:
-                    raise Exception ('Warning: Please enter correct percentage value between 0.0 and 1.0')
-
-                else:
-                    clientObject.distance_from_start_relative = parameters[1]
-
-            else:
-                clientObject.distance_from_start_absolute = parameters[1]
+        else:
+            clientObject.distance_from_start_absolute = parameters[1]
 
         # Comment
         clientObject.comment = comment
