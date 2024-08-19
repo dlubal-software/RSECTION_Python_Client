@@ -15,6 +15,7 @@ from RSECTION.BasicObjects.line import Line
 from RSECTION.BasicObjects.part import Part
 from RSECTION.BasicObjects.opening import Opening
 from RSECTION.BasicObjects.element import Element
+from RSECTION.BasicObjects.stresspoint import StressPoint
 
 if Model.clientModel is None:
     Model()
@@ -360,3 +361,52 @@ def test_elementnurbs():
     element_1 = Model.clientModel.service.get_element(1)
 
     assert element_1.nurbs_control_points_by_components[0][0].row['global_coordinate_z'] == -0.75
+
+def test_stressPoint():
+    
+    Model.clientModel.service.delete_all()
+    Model.clientModel.service.begin_modification()
+
+    Point(1, 1, 1)
+    Point(2, 1, -1)
+    Point(3, -1, -1)
+    Point(4, -1, 1)
+    Point(5,0.75,0.75)
+    Point(6,0.75,-0.75)
+    Point(7,-0.75,-0.75)
+    Point(8,-0.75,0.75)
+    Point(9, 0.75, 0)
+    Point(10, 0, 0.75)
+
+    Line(1, '1 2')
+    Line(2, '2 3')
+    Line(3, '3 4')
+    Line(4, '4 1')
+    Line.Circle(5, [0, 0], 0.5)
+
+    Part(1, '1 2 3 4')
+
+    Opening(1, '5')
+
+    Element(1, '7 8', 0.5)
+    Element.SingleLine(2, '6 7', 0.5, [True, 0.49])
+    Element.Arc(3, [9, 10], [0.5303,0.5303], ElementArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, 0.5)
+
+    StressPoint(1, -0.3, 0.75)
+    StressPoint.Standard(2, [0.6, 0], 1)
+    StressPoint.OnElement(3, 1, ElementSide.ELEMENT_SIDE_MIDDLE, PointReferenceType.REFERENCE_TYPE_L, [True, 0.4])
+    StressPoint.OnLine(4, 1, PointReferenceType.REFERENCE_TYPE_L, [True, 0.4])
+
+    Model.clientModel.service.finish_modification()
+    
+    sp_1 = Model.clientModel.service.get_stress_point(1)
+    sp_2 = Model.clientModel.service.get_stress_point(2)
+    sp_3 = Model.clientModel.service.get_stress_point(3)
+    sp_4 = Model.clientModel.service.get_stress_point(4)
+    
+    
+    assert sp_1.global_coordinate_1 == -0.3
+    assert sp_2.reference_stress_point == 1
+    assert sp_3.on_element_reference_element == 1
+    assert sp_4.on_line_reference_line == 1
+    
