@@ -409,4 +409,3 @@ def test_stressPoint():
     assert sp_2.reference_stress_point == 1
     assert sp_3.on_element_reference_element == 1
     assert sp_4.on_line_reference_line == 1
-    
