@@ -13,7 +13,12 @@ class StressPoint():
 
         '''
         Arg:
-
+            no (int): Stress Point Tag
+            coordinate_Y (float): Y-Coordinate
+            coordinate_Z (float): Z-Coordinate
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         #Cleint model | Stress Point
@@ -43,14 +48,21 @@ class StressPoint():
     @staticmethod
     def Standard(
                  no: int = 1,
-                 coordinate_system: list = None,
                  reference_point: int = None,
+                 coordinate_system: list = None,
                  comment: str = '',
                  params: dict = None,
                  model = Model):
 
         '''
         Args:
+            no (int): Stress Point Tag
+            reference_point (int): Reference Stress Point Number
+            coordinate_system (list): Coordinate System List
+                coordinate_system = [coordinate_Y, coordinate_Z]
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Stress Point
@@ -103,6 +115,17 @@ class StressPoint():
 
         '''
         Args:
+            no (int): Stress Point Tag
+            line_no (int): Reference Line Number
+            point_reference (enum): Point Reference Type Enumeration
+            parameters (list): Point Reference Parameter List
+                for relative reference:
+                    parameters = [True, distance_from_start_relative] ex: [True, 0.5]
+                for absolute reference:
+                    parameters = [False, distance_from_start_absolute]
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Stress Point
@@ -157,6 +180,18 @@ class StressPoint():
 
         '''
         Args:
+            no (int): Stress Point Tag
+            element_no (int): Reference Element Number
+            element_side (enum): Element Side Enumeration
+            point_reference (enum): Point Reference Type Enumeration
+            parameters (list): Point Reference Parameter List
+                for relative reference:
+                    parameters = [True, distance_from_start_relative] ex: [True, 0.5]
+                for absolute reference:
+                    parameters = [False, distance_from_start_absolute]
+            comment (str, optional): Comments
+            params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
+            model (RSECTION Class, optional): Model to be edited
         '''
 
         # Client model | Stress Point

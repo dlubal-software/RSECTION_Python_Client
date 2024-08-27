@@ -393,7 +393,7 @@ def test_stressPoint():
     Element.Arc(3, [9, 10], [0.5303,0.5303], ElementArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, 0.5)
 
     StressPoint(1, -0.3, 0.75)
-    StressPoint.Standard(2, [0.6, 0], 1)
+    StressPoint.Standard(2, 1, [0.6, 0])
     StressPoint.OnElement(3, 1, ElementSide.ELEMENT_SIDE_MIDDLE, PointReferenceType.REFERENCE_TYPE_L, [True, 0.4])
     StressPoint.OnLine(4, 1, PointReferenceType.REFERENCE_TYPE_L, [True, 0.4])
 
