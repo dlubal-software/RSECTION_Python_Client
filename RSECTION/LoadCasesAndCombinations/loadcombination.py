@@ -1,4 +1,4 @@
-from RSECTION.initModel import Model, clearAtributes
+from RSECTION.initModel import Model, clearAttributes
 
 class LoadCombination():
 
@@ -26,7 +26,7 @@ class LoadCombination():
         clientObject = model.clientModel.factory.create('ns0:load_combination')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Load Combination No.
         clientObject.no = no

@@ -1,4 +1,4 @@
-from RSECTION.initModel import Model, clearAtributes
+from RSECTION.initModel import Model, clearAttributes
 from RSECTION.enums import *
 
 class LoadCase():
@@ -27,7 +27,7 @@ class LoadCase():
         clientObject = model.clientModel.factory.create('ns0:load_case')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Load Case No.
         clientObject.no = no

@@ -1,4 +1,4 @@
-from RSECTION.initModel import  Model, ConvertToDlString, clearAtributes, ConvertStrToListOfInt
+from RSECTION.initModel import  Model, ConvertToDlString, clearAttributes, ConvertStrToListOfInt
 from RSECTION.enums import ObjectTypes
 
 class Part():
@@ -31,7 +31,7 @@ class Part():
         clientObject = model.clientModel.factory.create('ns0:part')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Line No.
         clientObject.no = no

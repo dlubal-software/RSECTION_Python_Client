@@ -1,4 +1,4 @@
-from RSECTION.initModel import Model, clearAtributes, ConvertToDlString, ConvertStrToListOfInt
+from RSECTION.initModel import Model, clearAttributes, ConvertToDlString, ConvertStrToListOfInt
 from RSECTION.enums import ObjectTypes
 
 class Opening():
@@ -25,7 +25,7 @@ class Opening():
         clientObject = model.clientModel.factory.create('ns0:opening')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Opening No.
         clientObject.no = no
