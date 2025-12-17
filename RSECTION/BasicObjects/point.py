@@ -1,5 +1,5 @@
 from RSECTION.enums import PointType, PointCoordinateSystemType, PointReferenceType, ObjectTypes
-from RSECTION.initModel import Model, clearAtributes, ConvertStrToListOfInt
+from RSECTION.initModel import Model, clearAttributes, ConvertStrToListOfInt
 
 class Point():
 
@@ -25,7 +25,7 @@ class Point():
         clientObject = model.clientModel.factory.create('ns0:point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Point No.
         clientObject.no = no
@@ -69,7 +69,7 @@ class Point():
         clientObject = model.clientModel.factory.create('ns0:point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Point No.
         clientObject.no = no
@@ -136,7 +136,7 @@ class Point():
         clientObject = model.clientModel.factory.create('ns0:point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Point No.
         clientObject.no = no
@@ -245,7 +245,7 @@ class Point():
         clientObject = model.clientModel.factory.create('ns0:point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Point No.
         clientObject.no = no
@@ -348,7 +348,7 @@ class Point():
         clientObject = model.clientModel.factory.create('ns0:point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Point No.
         clientObject.no = no

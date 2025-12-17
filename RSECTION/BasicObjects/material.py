@@ -1,4 +1,4 @@
-from RSECTION.initModel import Model, clearAtributes, ConvertStrToListOfInt
+from RSECTION.initModel import Model, clearAttributes, ConvertStrToListOfInt
 from RSECTION.enums import ObjectTypes
 
 class Material():
@@ -23,7 +23,7 @@ class Material():
         clientObject = model.clientModel.factory.create('ns0:material')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Material No.
         clientObject.no = no

@@ -1,5 +1,5 @@
 from RSECTION.enums import StressPointType, PointCoordinateSystemType, PointReferenceType, ElementSide
-from RSECTION.initModel import Model, clearAtributes, ConvertStrToListOfInt
+from RSECTION.initModel import Model, clearAttributes, ConvertStrToListOfInt
 
 class StressPoint():
 
@@ -25,7 +25,7 @@ class StressPoint():
         clientObject = model.clientModel.factory.create('ns0:stress_point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Stress Point No.
         clientObject.no = no
@@ -69,7 +69,7 @@ class StressPoint():
         clientObject = model.clientModel.factory.create('ns0:stress_point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Stress Point No.
         clientObject.no = no
@@ -132,7 +132,7 @@ class StressPoint():
         clientObject = model.clientModel.factory.create('ns0:stress_point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Stress Point No.
         clientObject.no = no
@@ -198,7 +198,7 @@ class StressPoint():
         clientObject = model.clientModel.factory.create('ns0:stress_point')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Stress Point No.
         clientObject.no = no

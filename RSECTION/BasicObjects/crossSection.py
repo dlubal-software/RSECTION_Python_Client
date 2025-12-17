@@ -1,7 +1,7 @@
-from RSECTION.initModel import Model, clearAtributes, ConvertStrToListOfInt
+from RSECTION.initModel import Model, clearAttributes, ConvertStrToListOfInt
 from RSECTION.enums import ObjectTypes
 
-class Section():
+class CrossSection():
 
     def __init__(self,
                  no: int = 1,
@@ -13,24 +13,24 @@ class Section():
 
         '''
         Args:
-            no (int): Section Tag
-            name (str): Section Name
+            no (int): Cross Section Tag
+            name (str): Cross Section Name
             material_no (int): Material Number
             comment (str, optional): Comments
             params (dict, optional): Any WS Parameter relevant to the object and its value in form of a dictionary
             model (RSECTION Class, optional): Model to be edited
         '''
 
-        # Client model | Section
-        clientObject = model.clientModel.factory.create('ns0:section')
+        # Client model | Cross Section
+        clientObject = model.clientModel.factory.create('ns0:cross_section')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
-        # Section No.
+        # Cross Section No.
         clientObject.no = no
 
-        # Section nNme
+        # Cross Section nNme
         clientObject.name = name
 
         # Material No.
@@ -44,19 +44,18 @@ class Section():
             for key in params:
                 clientObject[key] = params[key]
 
-        # Add Section to client model
-        model.clientModel.service.set_section(clientObject)
+        # Add CrossSection to client model
+        model.clientModel.service.set_cross_section(clientObject)
 
     @staticmethod
-    def DeleteSection(sections_no: str = '1 2', model = Model):
-
+    def DeleteCrossSection(cross_sections_no: str = '1 2', model = Model):
         '''
         Args:
-            sections_no (str): Sections Number
+            cross_sections_no (str): CrossSections Number
             model (RSECTION Class, optional): Model to be edited
 
         '''
 
         # Delete from client model
-        for section in ConvertStrToListOfInt(sections_no):
-            model.clientModel.service.delete_object(ObjectTypes.E_OBJECT_TYPE_SECTION.name, section)
+        for section in ConvertStrToListOfInt(cross_sections_no):
+            model.clientModel.service.delete_object(ObjectTypes.E_OBJECT_TYPE_CROSS_SECTION.name, section)

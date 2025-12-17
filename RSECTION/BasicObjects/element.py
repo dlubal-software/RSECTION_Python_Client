@@ -1,4 +1,4 @@
-from RSECTION.initModel import Model, clearAtributes, ConvertToDlString, ConvertStrToListOfInt
+from RSECTION.initModel import Model, clearAttributes, ConvertToDlString, ConvertStrToListOfInt
 from RSECTION.enums import ElementType, ElementArcAlphaAdjustmentTarget, ObjectTypes
 
 class Element():
@@ -25,7 +25,7 @@ class Element():
         clientObject = model.clientModel.factory.create('ns0:element')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Line No.
         clientObject.no = no
@@ -73,7 +73,7 @@ class Element():
         clientObject = model.clientModel.factory.create('ns0:element')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Line No.
         clientObject.no = no
@@ -139,7 +139,7 @@ class Element():
         clientObject = model.clientModel.factory.create('ns0:element')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Line No.
         clientObject.no = no
@@ -207,7 +207,7 @@ class Element():
         clientObject = model.clientModel.factory.create('ns0:element')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Line No.
         clientObject.no = no
@@ -274,7 +274,7 @@ class Element():
         clientObject = model.clientModel.factory.create('ns0:element')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Line No.
         clientObject.no = no
@@ -343,7 +343,7 @@ class Element():
         clientObject = model.clientModel.factory.create('ns0:element')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Line No.
         clientObject.no = no
@@ -420,7 +420,7 @@ class Element():
         clientObject = model.clientModel.factory.create('ns0:element')
 
         # Clears object atributes | Sets all atributes to None
-        clearAtributes(clientObject)
+        clearAttributes(clientObject)
 
         # Line No.
         clientObject.no = no
