@@ -7,7 +7,7 @@ readme = (here/"README.md").read_text(encoding="utf-8")
 
 setup(
     name='RSECTION',
-    version='1.00.0',
+    version='2.0.0',
     description='Python Framework for RSECTION1 Web Services',
     long_description=readme,
     long_description_content_type = "text/markdown",
